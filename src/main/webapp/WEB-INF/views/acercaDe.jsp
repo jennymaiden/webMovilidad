@@ -46,30 +46,45 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="icon_box_title">
-						<h1>A strong team with a strong background</h1>
-					</div>
-					<div class="button icon_box_button trans_200">
-						<a href="#" class="trans_200">discover more</a>
+						<h1>Nuestro objetivo</h1>
 					</div>
 				</div>
 
-				<div class="col-lg-4 icon_box_col">
+				<div class="col-lg-8 icon_box_col">
 
 					<!-- Icon Box Item -->
 					<div class="icon_box_paragraph">
-						<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae enim enim. Sed nec dignissim purus. Praesent bibendum tristique nulla, quis fringilla mauris sagittis ut. Maecenas sit amet varius nulla. Praesent faucibus ipsum.</p>
+						<p>Brindar una plataforma de información de lugares de interés   para las personas que sufran de algun tipo de  discapacidad 
+						, en donde dichos lugares tendrán en común su facilidad de acceso para estas personas.</p>
 					</div>
 
 				</div>
-
-				<div class="col-lg-4 icon_box_col">
-
-					<!-- Icon Box Item -->
-					<div class="icon_box_paragraph">
-						<p>Si non ligula sodales vestibulum. Nam nec augue a leo ullamcorper sollicitudin. Suspendisse mattis malesuada tortor sit amet accumsan. Mauris eu elit quis enim pretium finibus. Integer tempor, augue et lacinia cursus, nisl elit elementum magna, non blandit nisi ipsum vitae nulla. </p>
+			</div>
+		</div>
+	</div>
+	<div class="icon_boxes">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title">
+						<h1>Objetivos Especificos</h1>
+						<br>
 					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
 					
+					<ol>
+					  <li>Brindar una  plataforma dinámica en donde los mismos usuarios la puedan actualizar, agregando los lugares que cumplan las 
+						condiciones de movilidad para discapacitados así mismo como reportar sitios que se encuentran en condiciones no aptas y 
+						que se encuentren es esta plataforma.</li>
+					  <li>Junto con la  colaboración de una API de  google maps brindar la ruta  de llegada a dichos lugares.</li>
+					  <li>El sistema contará con estadísticas de los lugares más visitados y agradables para las personas, con el fin de 
+					  mantener actualizada la plataforma.</li>
+					</ol>
 				</div>
+				
 			</div>
 		</div>
 	</div>

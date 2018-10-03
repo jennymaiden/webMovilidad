@@ -41,19 +41,24 @@
 	<!-- Contenido -->
 	<div class="container">
 		<div class="row" style="margin-top:30px;">
+			
 			<div class="col-lg-2"></div>
 			<div class="col-lg-8">
-				<h2>Ingrese su informacion</h2>
+				<h2>Ingrese su informacion personal</h2><hr>
 				<form action="/formularioInicio" method="POST">
     				<div class="row">
     					<div class="col-sm-6">
     						<div class="form-group">
 						      <label for="nombre">Nombre:</label>
-						      <input type="nombre" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
+						      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
 						    </div>
 						    <div class="form-group">
 						      <label for="email">Email:</label>
-						      <input type="email" class="form-control" id="email" placeholder="Ingrese su nombre" name="email">
+						      <input type="text" class="form-control" id="email" placeholder="Ingrese su correo" name="email">
+						    </div>
+						    <div class="form-group">
+						      <label for="direccion">Direccion:</label>
+						      <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion" name="direccion">
 						    </div>
 						    <div class="form-group">
 						      <label for="email">Discapacidad:</label>
@@ -71,11 +76,31 @@
     					<div class="col-sm-6">
     						<div class="form-group">
 						      <label for="apellido">Apellido:</label>
-						      <input type="apellido" class="form-control" id="apellido" placeholder="Ingrese su apellido" name="apellido">
+						      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" name="apellido">
+						    </div>
+						    <div class="form-group">
+						      <label for="telefono">Telefono:</label>
+						      <input type="text" class="form-control" id="telefono" placeholder="Ingrese su nombre" name="email">
 						    </div>
 						    <div class="form-group">
 						      <label for="ciudad">Ciudad:</label>
-						      <input type="ciudad" class="form-control" id="ciudad" placeholder="Ingrese su ciudad" name="ciudad">
+						      <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su ciudad" name="ciudad">
+						    </div>
+    					</div>
+    				</div>
+    				<h3>Informacion de plataforma</h3><hr>
+    				<div class="row">
+    					
+    					<div class="col-sm-6">
+    						<div class="form-group">
+						      <label for="usuario">Nombre Usuario:</label>
+						      <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
+						    </div>
+    					</div>
+    					<div class="col-sm-6">
+    						<div class="form-group">
+						      <label for="contrasenia">Contraseña:</label>
+						      <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" name="contrasenia">
 						    </div>
     					</div>
     				</div>

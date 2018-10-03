@@ -40,7 +40,42 @@
 	</div>
 	<!-- Contenido -->
 	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<div class="section_title">
+					<h1>Encuentra lugares adaptados a tus necesidades</h1>
+					<br>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>En Healdth Mov encontrarás cualquier establecimiento adaptado a tus necesidades.<br>
+				¿Cuáles pueden ser estas necesidades? Todas.<br>
+				Las personas con discapacidad (motora, auditiva, visual) tienen unas necesidades especiales, que en esta aplicacion podran
+				listar los lugares que se acoplen a estas necesidades.</p>
+			</div>
+		</div>
 		
+		<div class="row">
+			<div class="col text-center">
+				<div class="section_title">
+					<h1>Entérate de lo que sucede a tu alrededor en materia de accesibilidad</h1>
+					<br>
+					<hr>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Es interactiva, cualquier usuario registrado de forma gratuita puede dar de alta un establecimiento o ingresar uno nuevo en 
+				cualquier parte de la ciudad e Bogotá. Además, puede comentar y valorar esa accesibilidad.
+				<br>Ya que no es igual la accesibilidad de una persona joven en silla de ruedas que una persona mayor en silla de reudas electrica,
+				paraesto las personas tendran la opcion de opinar sobre sus necesidades y lo mas importante dar un rainting de los mejores lugares
+				para que asi ayudar a los otros usuarios a conocer estos lugares.</p>
+			</div>
+		</div>
 	</div>
 	<!-- Footer -->
 	<jsp:include page="templates/Footer.jsp" />	
