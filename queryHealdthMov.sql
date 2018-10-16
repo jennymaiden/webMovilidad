@@ -9,3 +9,16 @@
 	usuario varchar(30),
 	contrasenia varchar(30)
 );
+
+
+CREATE TABLE discapacidad(
+	id serial primary key,
+	tipo varchar(30),
+	disabled boolean
+);
+
+ALTER TABLE "persona" 
+   ADD CONSTRAINT fk_discapacidad
+   FOREIGN KEY (anio_nacimiento) 
+   REFERENCES "Anios"(clave_anio);
+

@@ -1,1 +1,6 @@
+com/discapacidad/movilidad/modelo/VO/PersonaVO.class
+com/discapacidad/movilidad/servicio/impl/SesionServicioImpl.class
+com/discapacidad/movilidad/modelo/DAO/PersonaDAO.class
+com/discapacidad/movilidad/modelo/DAO/PersonaImplDAO.class
 com/discapacidad/movilidad/SpringController.class
+com/discapacidad/movilidad/servicio/SesionServicio.class
