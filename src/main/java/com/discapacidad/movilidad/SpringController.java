@@ -54,7 +54,10 @@ public class SpringController {
         
         System.out.println("**************");
         System.out.println("Buscar lalista de discapacidad");
+        
         servicioSesion.buscarPersonaId(1);
+        model.addAttribute("discapacidades", servicioSesion.selectDiscapacitad());
+        
         return "login";
     }
 	
@@ -96,10 +99,13 @@ public class SpringController {
         logger.info("Entro al formulario de registro");
         
         PersonaVO objPersona = servicioSesion.mapearFormularioResistro(request);
-        
+        System.out.println("mapeo la persona:..."+objPersona.getNombre());
+        System.out.println("Guardar persona****");
+        //servicioSesion.guardarPersona(objPersona);
+        model.addAttribute("persona",objPersona);
         //armar el objeto de persona
         
-        return "noticias";
+        return "redirect:/unete";
     }
 
 }

@@ -17,8 +17,21 @@ CREATE TABLE discapacidad(
 	disabled boolean
 );
 
+ALTER TABLE persona ADD COLUMN id_discapacidad integer ;
 ALTER TABLE "persona" 
    ADD CONSTRAINT fk_discapacidad
-   FOREIGN KEY (anio_nacimiento) 
-   REFERENCES "Anios"(clave_anio);
+   FOREIGN KEY (id_discapacidad) 
+   REFERENCES "discapacidad"(id);
+
+insert into discapacidad (tipo, disabled) values('Silla de ruedas', true);
+insert into discapacidad (tipo, disabled) values('Visual', true);
+insert into discapacidad (tipo, disabled) values('Auditiva', true);
+insert into discapacidad (tipo, disabled) values('Movilidad', true);
+insert into discapacidad (tipo, disabled) values('Otra', true);
+
+select * from persona;
+select * from discapacidad;
+
+
+
 

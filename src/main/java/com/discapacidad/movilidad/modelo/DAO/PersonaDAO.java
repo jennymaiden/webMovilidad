@@ -1,29 +1,15 @@
 package com.discapacidad.movilidad.modelo.DAO;
 
-import javax.transaction.Transactional;
-
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
-
 import com.discapacidad.movilidad.modelo.VO.PersonaVO;
 
-@Repository
-public class PersonaDAO {
+public interface PersonaDAO {
 	
-	@Autowired
-	public SessionFactory mySessionFactory;
+	/**
+	 * Buscar un PERSONA POR SU ID**/
+	public PersonaVO consultaPersona(Integer id );
 	
-	public void setSessionFactory(SessionFactory sessionFactory) {
-        this.mySessionFactory = sessionFactory;
-    }
-	
-	@Transactional
-	public PersonaVO consultaPersona(Integer id ){
-		
-		return (PersonaVO) mySessionFactory.getCurrentSession().get(PersonaVO.class, id);
-		
-	}
+	/**
+	 * Guardar la persona**/
+	public void guardarPersona(PersonaVO objeto);
 
 }

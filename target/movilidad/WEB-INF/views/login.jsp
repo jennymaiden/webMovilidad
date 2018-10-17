@@ -52,7 +52,7 @@
 					<div class="col-lg-2"></div>
 					<div class="col-lg-8">
 						<h2>Ingrese su informacion personal</h2><hr>
-						<form action="/formularioInicio" method="POST">
+						<form action="formularioInicio" method="POST">
 		    				<div class="row">
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
@@ -69,15 +69,13 @@
 								    </div>
 								    <div class="form-group">
 								      <label for="email">Discapacidad:</label>
-								      
 								      <select class="form-control" id="discapacidad" name="discapacidad">
-										  <option value="0">Seleccione</option>
-										  <option value="1">Silla de ruedas</option>
-										  <option value="2">Visual</option>
-										  <option value="3">Auditiva</option>
-										  <option value="4">Movilidad</option>
-										  <option value="5">Otra</option>
-										</select>
+										<option value="0"> Seleccione</option>
+										<c:forEach items="${discapacidades}" var="dicapacidad">
+											<option value="${dicapacidad.id}" > ${dicapacidad.nombre} </option>	
+										</c:forEach>
+									  </select>
+								      
 								    </div>
 		    					</div>
 		    					<div class="col-sm-6">
@@ -87,7 +85,7 @@
 								    </div>
 								    <div class="form-group">
 								      <label for="telefono">Telefono:</label>
-								      <input type="text" class="form-control" id="telefono" placeholder="Ingrese su nombre" name="email">
+								      <input type="text" class="form-control" id="telefono" placeholder="Ingrese su nombre" name="telefono">
 								    </div>
 								    <div class="form-group">
 								      <label for="ciudad">Ciudad:</label>
@@ -100,8 +98,8 @@
 		    					
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="usuario">Nombre Usuario:</label>
-								      <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
+								      <label for="nameUsuario">Nombre Usuario:</label>
+								      <input type="text" class="form-control" id="nameUsuario" placeholder="Ingrese su usuario" name="nameUsuario">
 								    </div>
 		    					</div>
 		    					<div class="col-sm-6">

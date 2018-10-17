@@ -1,6 +1,9 @@
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/servicio/impl/SesionServicioImpl.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/servicio/SesionServicio.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/PersonaDAO.java
-/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/PersonaImplDAO.java
+/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/VO/DiscapacidadVO.java
+/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/DiscapacidadDAO.java
+/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/PersonaDAOImpl.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/SpringController.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/VO/PersonaVO.java
+/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/DiscapaidadDAOImpl.java
