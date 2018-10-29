@@ -41,6 +41,19 @@
 	<!-- Contenido -->
 	<div class="container">
 		<br>
+		
+		<c:if test="${validar != ''}">
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  <strong>${validar}</strong> 
+			  <p>El usuario es:...<strong>${usr.nombre}</strong></p>
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			
+			
+		</c:if>
+		<br>
 		<ul class="nav nav-tabs">
 			<li class="nav-item "><a href="#registro" data-toggle="tab" class="nav-link active show">Registrate</a></li>
 			<li class="nav-item "><a href="#login" data-toggle="tab" class="nav-link">Ingresa</a></li>
@@ -56,21 +69,21 @@
 		    				<div class="row">
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="nombre">Nombre:</label>
-								      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
+								      <label for="nombre"><span class="text-danger">*</span>Nombre:</label>
+								      <input type="text" class="form-control"  id="nombre" placeholder="Ingrese su nombre" name="nombre" required>
 								    </div>
 								    <div class="form-group">
-								      <label for="email">Email:</label>
-								      <input type="text" class="form-control" id="email" placeholder="Ingrese su correo" name="email">
+								      <label for="email"><span class="text-danger">*</span>Email:</label>
+								      <input type="text" class="form-control" id="email" placeholder="Ingrese su correo" name="email" required>
 								    </div>
 								    <div class="form-group">
 								      <label for="direccion">Direccion:</label>
 								      <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion" name="direccion">
 								    </div>
 								    <div class="form-group">
-								      <label for="email">Discapacidad:</label>
-								      <select class="form-control" id="discapacidad" name="discapacidad">
-										<option value="0"> Seleccione</option>
+								      <label for="email"><span class="text-danger">*</span>Discapacidad:</label>
+								      <select class="form-control" id="discapacidad" name="discapacidad" required>
+										<option value="0"> Seleccione</option >
 										<c:forEach items="${discapacidades}" var="dicapacidad">
 											<option value="${dicapacidad.id}" > ${dicapacidad.nombre} </option>	
 										</c:forEach>
@@ -80,8 +93,8 @@
 		    					</div>
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="apellido">Apellido:</label>
-								      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" name="apellido">
+								      <label for="apellido"><span class="text-danger">*</span>Apellido:</label>
+								      <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" name="apellido" required>
 								    </div>
 								    <div class="form-group">
 								      <label for="telefono">Telefono:</label>
@@ -98,14 +111,14 @@
 		    					
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="nameUsuario">Nombre Usuario:</label>
-								      <input type="text" class="form-control" id="nameUsuario" placeholder="Ingrese su usuario" name="nameUsuario">
+								      <label for="nameUsuario"><span class="text-danger">*</span>Nombre Usuario:</label>
+								      <input type="text" class="form-control" id="nameUsuario" placeholder="Ingrese su usuario" name="nameUsuario" required>
 								    </div>
 		    					</div>
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="contrasenia">Contraseña:</label>
-								      <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" name="contrasenia">
+								      <label for="contrasenia"><span class="text-danger">*</span>Contraseña:</label>
+								      <input type="password" class="form-control" id="contrasenia" placeholder="Ingrese su contraseña" name="contrasenia" required>
 								    </div>
 		    					</div>
 		    				</div>
@@ -129,7 +142,7 @@
 					<div class="col-lg-2"></div>
 					<div class="col-lg-8">
 						<h2>Ingrese a la aplicacion</h2><hr>
-						<form action="/formularioLogin" method="POST">
+						<form action="formularioLogin" method="POST">
 		    				<div class="row">
 		    					<div class="col-sm-6">
 		    						<div class="form-group">

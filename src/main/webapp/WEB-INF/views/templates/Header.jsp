@@ -14,6 +14,9 @@
 				<li><a href="servicios">Servicios</a></li>
 				<li><a href="noticias">Noticias</a></li>
 				<li><a href="unete">Unete</a></li>
+				<c:if test="${perfil != ''}">
+					<li><a href="#" id="perfilUsuario" data-toggle="modal" data-target="#myModal">Bienvenido <strong>${usr.nombre}</strong></a></li>
+				</c:if>
 			</ul>
 			
 		</nav>
@@ -38,4 +41,5 @@
 			</ul>
 		</div>
 	</div>
+	<jsp:include page="../modals/PerfilUsuario.jsp" />
 	

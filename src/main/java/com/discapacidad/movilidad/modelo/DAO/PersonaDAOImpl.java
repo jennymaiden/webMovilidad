@@ -46,6 +46,65 @@ public class PersonaDAOImpl implements PersonaDAO {
 		 }
 		 
 	}
+
+	@Transactional 
+	public boolean validarUsuario(String usuario) {
+		boolean respuesta = false;
+		try
+		 {
+			Query query = mySessionFactory.getCurrentSession().createQuery("from PersonaVO where usuario=:pUsuario");
+			query.setParameter("pUsuario",usuario);
+			System.out.println("La respuesta es:..."+query.list());
+			
+			System.out.println("El tamaño de la lista es:......"+query.list().size());
+			if(query.list().size() > 1){
+				respuesta = true;
+			}
+			
+		 }
+		 catch (HibernateException e)
+		 {
+			 e.printStackTrace();
+			 System.out.println("catch:....");
+			 
+		 }
+		 /*catch(Exception e){
+			 e.printStackTrace();
+			 System.out.println("catch:....");
+	       
+	     }*/
+	
+		return respuesta;
+	}
+
+	@Transactional
+	public PersonaVO validarSession(String usuario, String contraenia) {
+		// TODO Auto-generated method stub
+		PersonaVO respuesta = new PersonaVO();
+		try
+		{
+			Query query = mySessionFactory.getCurrentSession().createQuery("from PersonaVO where usuario=:pUsuario and contrasenia=:pContra");
+			query.setParameter("pUsuario",usuario);
+			query.setParameter("pContra",contraenia);
+			System.out.println("La respuesta es:..."+query.list());
+			
+			System.out.println("El tamaño de la lista es:......"+query.list().size());
+			if(query.list().size() == 1){
+				
+				respuesta = (PersonaVO) query.getSingleResult();
+			}
+			
+		}
+		catch(HibernateException e)
+		 {
+			 e.printStackTrace();			 
+		 }
+		catch(Exception e)
+		{
+			 e.printStackTrace();
+	    }
+		return respuesta;
+	}
 	
 	
 

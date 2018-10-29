@@ -36,7 +36,7 @@ public class PersonaVO {
 	@Column(name="usuario", nullable=false, length=30)
 	public String usuario;
 	
-	@Column(name="contrasenia", nullable=false, length=30)
+	@Column(name="contrasenia", nullable=false)
 	public String contrasenia;
 	
 	@Column(name="id_discapacidad", nullable=false, length=30)

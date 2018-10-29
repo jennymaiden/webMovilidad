@@ -7,7 +7,7 @@
 	email varchar(50),
 	ciudad varchar(30),
 	usuario varchar(30),
-	contrasenia varchar(30)
+	contrasenia text
 );
 
 
@@ -28,6 +28,8 @@ insert into discapacidad (tipo, disabled) values('Visual', true);
 insert into discapacidad (tipo, disabled) values('Auditiva', true);
 insert into discapacidad (tipo, disabled) values('Movilidad', true);
 insert into discapacidad (tipo, disabled) values('Otra', true);
+
+alter table persona ALTER column contrasenia TYPE text;
 
 select * from persona;
 select * from discapacidad;
