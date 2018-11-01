@@ -420,14 +420,14 @@ section
 }
 .search_button
 {
-	width: 40px;
-	height: 40px;
-	background: transparent;
+	border-radius: 10%;
+	background: #ad7fa8;
 	cursor: pointer;
+	color: #FFFFFF;
 }
 .search_button:active
 {
-	background: #301b54;
+	background: #ff6b09;
 }
 .search_form
 {

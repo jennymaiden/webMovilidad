@@ -54,12 +54,14 @@
 			
 		</c:if>
 		<br>
+		
+		
 		<ul class="nav nav-tabs">
-			<li class="nav-item "><a href="#registro" data-toggle="tab" class="nav-link active show">Registrate</a></li>
-			<li class="nav-item "><a href="#login" data-toggle="tab" class="nav-link">Ingresa</a></li>
+			<li class="nav-item "><a href="#registro" data-toggle="tab" class="nav-link  ${activeRegistro}">Registrate</a></li>
+			<li class="nav-item "><a href="#login" data-toggle="tab" class="nav-link ${activeIngresa}">Ingresa</a></li>
 		</ul>
 		<div class="tab-content clearfix">
-			<div class="tab-pane active" id="registro">
+			<div class="tab-pane ${activeRegistro} " id="registro">
 				<div class="row" style="margin-top:30px;">
 			
 					<div class="col-lg-2"></div>
@@ -136,7 +138,7 @@
 					
 				</div>
 			</div>
-			<div class="tab-pane" id="login">
+			<div class="tab-pane ${activeIngresa}" id="login">
 				<div class="row" style="margin-top:30px;">
 			
 					<div class="col-lg-2"></div>
@@ -146,8 +148,8 @@
 		    				<div class="row">
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="usuario">Usuario:</label>
-								      <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario">
+								      <label for="usuario"><span class="text-danger">*</span> Usuario:</label>
+								      <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" name="usuario" required>
 								    </div>
 								    
 								    
@@ -155,8 +157,8 @@
 		    					</div>
 		    					<div class="col-sm-6">
 		    						<div class="form-group">
-								      <label for="password">Contraseña:</label>
-								      <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" name="password">
+								      <label for="password"><span class="text-danger">*</span>Contraseña:</label>
+								      <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" name="password" required>
 								    </div>
 								    
 							

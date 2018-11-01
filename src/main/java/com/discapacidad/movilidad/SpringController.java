@@ -39,7 +39,7 @@ public class SpringController {
 		
 		logger.info("Returning hello view");
         model.addAttribute("title", "Health Mov -Login");
-        
+        servicioSesion.validacionSesion(request, model);
 		/*ModelAndView model= new ModelAndView("index");
 		logger.info("Returning hello view");
 		model.addObject("title", "Health Mov");*/
@@ -56,6 +56,7 @@ public class SpringController {
             throws ServletException, IOException {
 		
         model.addAttribute("title", "Health Mov -Acerca de nosotros");
+        servicioSesion.validacionSesion(request, model);
         return "acercaDe";
     }
 	
@@ -64,6 +65,7 @@ public class SpringController {
             throws ServletException, IOException {
 			
         model.addAttribute("title", "Health Mov -Servicios");
+        servicioSesion.validacionSesion(request, model);
         return "Servicios";
     }
 	
@@ -72,7 +74,17 @@ public class SpringController {
             throws ServletException, IOException {
 			
         model.addAttribute("title", "Health Mov -Noticias");
+        servicioSesion.validacionSesion(request, model);
         return "noticias";
+    }
+	
+	@RequestMapping(value = "/sitiosInteres", method = RequestMethod.GET)
+    public String sitiosInteres(Model model,HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+			
+        model.addAttribute("title", "Health Mov -Sitios de interes");
+        servicioSesion.validacionSesion(request, model);
+        return "sitiosInteres";
     }
 	
 	@RequestMapping(value = "/unete", method = RequestMethod.GET)
@@ -80,9 +92,12 @@ public class SpringController {
             throws ServletException, IOException {
 
         model.addAttribute("title", "Health Mov -Login");
-
+        servicioSesion.validacionSesion(request, model);
         //servicioSesion.buscarPersonaId(1);
         model.addAttribute("discapacidades", servicioSesion.selectDiscapacitad());
+        model.addAttribute("activeRegistro","active show");
+    	model.addAttribute("activeIngresa","");
+    	
         String msg = "";
         System.out.println("Parametro que llega:..."+request.getParameter("res"));
         if(request.getParameter("res") != null){
@@ -91,6 +106,8 @@ public class SpringController {
             }else if(request.getParameter("res").equals("false")){
             	msg = "No se puede hacer el registro de la persona";
             }
+        	model.addAttribute("activeRegistro","active show");
+        	model.addAttribute("activeIngresa","");
         }
         
         //Autenticacion
@@ -102,7 +119,10 @@ public class SpringController {
             }else if(request.getParameter("login").equals("false")){
             	msg = "Usario y/o contraseña invalido, vuelva a intentarlo";
             }
+        	model.addAttribute("activeIngresa","active show");
+        	model.addAttribute("activeRegistro","");
         }
+        
         
         
         model.addAttribute("validar", msg);

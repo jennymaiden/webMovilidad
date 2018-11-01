@@ -34,6 +34,27 @@ alter table persona ALTER column contrasenia TYPE text;
 select * from persona;
 select * from discapacidad;
 
+CREATE TABLE lugar(
+	id serial primary key,
+	nombre varchar(30),
+	latitud integer,
+	longitud integer,
+	mensaje text,
+	megusta integer
+);
 
+CREATE TABLE categoria(
+	id serial primary key,
+	nombre varchar(30),
+	disabled boolean 
+);
 
+CREATE TABLE categoria_lugar(
+	id_lugar integer,
+	id_categoria integer,
+	FOREIGN KEY (id_lugar) REFERENCES lugar(id),
+	FOREIGN KEY (id_categoria) REFERENCES categoria(id)	
+);
+
+insert into categoria (nombre, disabled) values('');
 

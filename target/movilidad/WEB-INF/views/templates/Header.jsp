@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header class="header d-flex flex-row justify-content-end align-items-center trans_200">
 		
 		<!-- Logo -->
@@ -13,7 +14,13 @@
 				<li class="active"><a href="acercaDeNosotros">Acerca de nosotros</a></li>
 				<li><a href="servicios">Servicios</a></li>
 				<li><a href="noticias">Noticias</a></li>
-				<li><a href="unete">Unete</a></li>
+				<c:if test="${perfil !='true'}">
+					<li><a href="unete">Unete</a></li>
+				</c:if>
+				<c:if test="${perfil =='true'}">
+					<li><a href="sitiosInteres">Sitios Interes</a></li>
+					<li><a href="#" id="perfilUsuario" data-toggle="modal" data-target="#myModal">Bienvenido <strong>${usr.nombre}</strong></a></li>
+				</c:if>
 			</ul>
 			
 		</nav>
@@ -38,4 +45,6 @@
 			</ul>
 		</div>
 	</div>
+	
+	<jsp:include page="../modals/PerfilUsuario.jsp" />
 	

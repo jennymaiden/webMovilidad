@@ -10,11 +10,21 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
+        <h4 class="modal-title">Bienvenido <strong>${usr.nombre}</strong></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+       	<h3>Su informacion personal es</h3>
+       	<p><strong>Nombre:</strong> ${usr.nombre} ${usr.apellido}</p>
+       	<div class="row">
+       		<div class="col-sm-12">
+       			<p><strong>Correo:</strong> ${usr.email}</p>
+       			<p><strong>Telefono:</strong> ${usr.telefono}</p>
+       			<p><strong>Direccion:</strong> ${usr.direccion}</p>
+       			<p><strong>Ciudad:</strong> ${usr.ciudad}</p>
+       		</div>
+       		
+       	</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
