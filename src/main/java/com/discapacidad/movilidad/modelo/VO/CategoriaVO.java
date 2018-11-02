@@ -18,8 +18,11 @@ public class CategoriaVO {
 	@Column(name="nombre", nullable=false, length=30)
 	public String nombre;
 	
-	@Column(name="nombre", nullable=false)
+	@Column(name="disabled", nullable=false)
 	public boolean habilitado;
+	
+	@Column(name="nombre_html", nullable=false)
+	public String html;
 
 	
 	public CategoriaVO() {
@@ -27,11 +30,12 @@ public class CategoriaVO {
 	}
 
 
-	public CategoriaVO(Integer id, String nombre, boolean habilitado) {
+	public CategoriaVO(Integer id, String nombre, boolean habilitado, String html) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.habilitado = habilitado;
+		this.html = html;
 	}
 
 
@@ -62,6 +66,16 @@ public class CategoriaVO {
 
 	public void setHabilitado(boolean habilitado) {
 		this.habilitado = habilitado;
+	}
+
+
+	public String getHtml() {
+		return html;
+	}
+
+
+	public void setHtml(String html) {
+		this.html = html;
 	}
 	
 	

@@ -48,7 +48,7 @@ CREATE TABLE categoria(
 	nombre varchar(30),
 	disabled boolean 
 );
-
+alter table categoria add column nombre_html  varchar(30);
 CREATE TABLE categoria_lugar(
 	id_lugar integer,
 	id_categoria integer,
@@ -56,5 +56,9 @@ CREATE TABLE categoria_lugar(
 	FOREIGN KEY (id_categoria) REFERENCES categoria(id)	
 );
 
-insert into categoria (nombre, disabled) values('');
+insert into categoria (nombre, disabled, nombre_html) values('Restaurantes', true, 'restauran');
+insert into categoria (nombre, disabled, nombre_html) values('Parques', true, 'park');
+insert into categoria (nombre, disabled, nombre_html) values('Museos', true, 'museo');
+insert into categoria (nombre, disabled, nombre_html) values('Teatros', true, 'teatro');
+insert into categoria (nombre, disabled, nombre_html) values('Centros comerciales', true, 'cc_comercial');
 

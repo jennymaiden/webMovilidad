@@ -18,6 +18,7 @@
 <!--  Eventos  jQuery -->
 <script src="webjars/jquery/3.0.0/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="resources/js/ScriptUtilidad.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk&callback=initMap"
     async defer></script>
 <style>
@@ -76,6 +77,7 @@
 	</div> 
 	<!-- Contenido -->
 	<div class="container">
+	<br>
 		<div class="row">
 				<div class="col text-center">
 					<div class="section_title">
@@ -86,19 +88,24 @@
 				</div>
 		</div>
 		
-		<div class="panel panel-default">
-		    <div class="panel-body">
-		    	<div class="row">
-		    		<div class="col-sm-4" align="center"><button class="btn search_button">Restaurantes</button></div>
-		    		<div class="col-sm-4" align="center"><button class="btn search_button">Parques</button></div>
-		    		<div class="col-sm-4" align="center"><button class="btn btn-success">Museos</button></div>
-		    		
-		    	</div>
-		    	<div class="row">
-		    		<div class="col-sm-6" align="center"><button class="btn btn-success">Teatros</button></div>
-		    		<div class="col-sm-6" align="center"><button class="btn btn-success">Centros comerciales</button></div>
-		    	</div>
-		    </div>
+		<div class="row" id="div_categorias">
+		   	<c:forEach items="${categorias}" var="categoria">
+		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.html}')">${categoria.nombre}</button></div>
+			</c:forEach>	    		
+		</div>
+		<div class="row" id="div_volverCategorias" style="display:none">
+			<div class="col-sm-8"></div>
+			<div class="col-sm-4" align="right"><button type="button" class="btn btn-info" onClick="volverCategorias()">Mostrar categorias</button></div>
+		</div>
+		<div id="div_vistaCategoria" style="display:none">
+			<div class="row">
+				<div class="col-sm-4">
+					<ul id="lista_lugares">
+						
+					</ul>
+				</div>
+				<div class="col-sm-8"></div>
+			</div>
 		</div>
 		<div id="map"></div>
 	</div>

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.discapacidad.movilidad.modelo.VO.PersonaVO;
+import com.discapacidad.movilidad.servicio.MovilidadServicio;
 import com.discapacidad.movilidad.servicio.SesionServicio;
 /**
  * @author Carolina
@@ -31,6 +32,9 @@ public class SpringController {
 	
 	@Autowired
 	public SesionServicio servicioSesion;
+	
+	@Autowired
+	public MovilidadServicio serviciomMovilidad;
 	
 	protected final Log logger = LogFactory.getLog(getClass());
 
@@ -84,7 +88,19 @@ public class SpringController {
 			
         model.addAttribute("title", "Health Mov -Sitios de interes");
         servicioSesion.validacionSesion(request, model);
+        //Listar las categoias
+        model.addAttribute("categorias", serviciomMovilidad.mostrarCategorias());
         return "sitiosInteres";
+    }
+	
+	/**
+	 * Ajax de movilidad**/
+	@RequestMapping(value = "/ajaxMovilidad", method = RequestMethod.POST)
+    public void ajaxMovilidad(Model model,HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+			
+        System.out.println("Lo que envia el ajax es:....."+request.getParameter("data"));
+        
     }
 	
 	@RequestMapping(value = "/unete", method = RequestMethod.GET)

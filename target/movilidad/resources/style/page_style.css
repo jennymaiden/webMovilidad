@@ -421,8 +421,9 @@ section
 .search_button
 {
 	border-radius: 10%;
-	background: #301b54;
+	background: #ad7fa8;
 	cursor: pointer;
+	color: #FFFFFF;
 }
 .search_button:active
 {
