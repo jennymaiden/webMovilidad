@@ -12,4 +12,5 @@
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/CategoriaDAO.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/VO/CategoriaVO.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/servicio/impl/MovilidadServicioImpl.java
+/home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/AjaxController.java
 /home/fernando/Documentos/Utilidades/movilidad/src/main/java/com/discapacidad/movilidad/modelo/DAO/DiscapaidadDAOImpl.java

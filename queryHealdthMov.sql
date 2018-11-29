@@ -62,3 +62,24 @@ insert into categoria (nombre, disabled, nombre_html) values('Museos', true, 'mu
 insert into categoria (nombre, disabled, nombre_html) values('Teatros', true, 'teatro');
 insert into categoria (nombre, disabled, nombre_html) values('Centros comerciales', true, 'cc_comercial');
 
+
+alter table lugar ALTER column nombre TYPE text;
+SELECT * from categoria_lugar;
+SELECT * from lugar;
+SELECT * from categoria;
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Leo Cocina y Cava','4.614441001281722','-74.06905600000005','Una manifestación de la vida de montaña, bosque, páramo, valle, mar, isla, manglar, selva tropical y río.',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Pasión Peruana','4.614960210112264','-74.06602937044887','Pasión Peruana.',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Museo Exposición del Hombre','4.615975030971612','-74.07730057034499','Museo Exposición del Hombre.',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Parque Distrital Barrio Ricaute','4.6089810964225455','-74.09414484295851','Parque Distrital Barrio Ricaute.',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Calima Centro Comercial','4.618642230053939','-74.08593288017192','Calima Centro Comercial',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Corferias','4.626616264115877','-74.09300135590927','Corferias',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Centro Comercial Galerias','4.6431695591437805','-74.0750020748295','Centro Comercial Galerias',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Estadio el Campin','4.6459498963820005','-74.0773624187626','Estadio el Campin',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Movistar Arena','4.649457639554529','-74.07727671672336','Movistar Arena',0);
+insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Casino Dragones','4.660621596827871','-74.06372641986017','Casino Dragones',0);
+
+insert into categoria_lugar (id_lugar,id_categoria) values(1,1); --restaurante
+insert into categoria_lugar (id_lugar,id_categoria) values(4,1); --restaurante
+insert into categoria_lugar (id_lugar,id_categoria) values(6,2); --parques
+
+

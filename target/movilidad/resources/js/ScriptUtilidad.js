@@ -8,13 +8,16 @@ function mostrarCategoria(id){
 	$("#div_volverCategorias").css("display","block");
 	$("#div_categorias").css("display","none");
 	$("#div_vistaCategoria").css("display","block");
+	var search = {}
+	search["categoria"] = "mostrarCategoria";
+	search["funcion"] = "1";
 	//AJax para mostrar la lista de lugares
 	$.ajax({
         url: 'ajaxMovilidad',
         type: 'POST',
-        data: JSON.stringify({categoria: id, funcion:1}),
+        data: 'funcion='+JSON.stringify(search),
         async: false,
-        contentType: "application/json",
+       // contentType: "application/json",
         success: function(result){
            console.log("Respuesta::....."+result);
         	$("#lista_lugares").html(result);
@@ -33,7 +36,7 @@ function volverCategorias(){
 	$("#div_vistaCategoria").css("display","none");
 	
 	var search = {}
-	search["categoria"] = "funciona";
+	search["categoria"] = "volverCategoria";
 	search["funcion"] = "1";
 	
 	$.ajax({

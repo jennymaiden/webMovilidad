@@ -2,6 +2,7 @@ com/discapacidad/movilidad/modelo/VO/PersonaVO.class
 com/discapacidad/movilidad/modelo/DAO/DiscapaidadDAOImpl.class
 com/discapacidad/movilidad/servicio/impl/SesionServicioImpl.class
 com/discapacidad/movilidad/modelo/DAO/PersonaDAO.class
+com/discapacidad/movilidad/AjaxController.class
 com/discapacidad/movilidad/servicio/impl/MovilidadServicioImpl.class
 com/discapacidad/movilidad/SpringController.class
 com/discapacidad/movilidad/modelo/DAO/PersonaDAOImpl.class

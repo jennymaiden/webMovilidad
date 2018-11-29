@@ -13,11 +13,14 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.discapacidad.movilidad.modelo.VO.PersonaVO;
@@ -94,14 +97,22 @@ public class SpringController {
     }
 	
 	/**
-	 * Ajax de movilidad**/
+	 * Ajax de movilidad*
 	@RequestMapping(value = "/ajaxMovilidad", method = RequestMethod.POST)
-    public void ajaxMovilidad(Model model,HttpServletRequest request, HttpServletResponse response)
+    public JSONObject ajaxMovilidad(@RequestBody JSONObject obj,Model model,HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 			
-        System.out.println("Lo que envia el ajax es:....."+request.getParameter("data"));
+        System.out.println("Lo que envia el ajax es data:....."+request.getParameter("data"));
+        System.out.println("Lo que envia el ajax es categoria:....."+request.getParameter("categoria"));
+        //
+        System.out.println("Respuesta:::..."+obj.get("categoria"));
+        JSONObject obj2 = new JSONObject();
         
-    }
+        obj.put("llave", "valor");
+        return obj2;
+    }*/
+	
+	
 	
 	@RequestMapping(value = "/unete", method = RequestMethod.GET)
     public String paginaUnete(Model model,HttpServletRequest request, HttpServletResponse response)

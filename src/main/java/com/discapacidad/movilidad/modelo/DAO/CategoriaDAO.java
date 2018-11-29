@@ -7,4 +7,6 @@ import com.discapacidad.movilidad.modelo.VO.CategoriaVO;
 public interface CategoriaDAO {
 
 	public List<CategoriaVO> listarCategoria();
+	
+	
 }
