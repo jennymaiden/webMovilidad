@@ -30,13 +30,12 @@ public class DiscapaidadDAOImpl implements DiscapacidadDAO{
 		 {
 			 Query query =  mySessionFactory.getCurrentSession().createQuery("from DiscapacidadVO") ;
 			 lista = query.list();
-			 //System.out.println("listar discapacidad query:...."+query);
-			 //System.out.println("listar discapacidad list:...."+lista);
+			 
 		 }
 		 catch (HibernateException e)
 		 {
 			 e.printStackTrace();
-			 //System.out.println("catch:....");
+			
 			 
 		 }
 		 

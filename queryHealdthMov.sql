@@ -81,5 +81,10 @@ insert into lugar (nombre, latitud, longitud, mensaje,megusta) values('Casino Dr
 insert into categoria_lugar (id_lugar,id_categoria) values(1,1); --restaurante
 insert into categoria_lugar (id_lugar,id_categoria) values(4,1); --restaurante
 insert into categoria_lugar (id_lugar,id_categoria) values(6,2); --parques
-
+insert into categoria_lugar (id_lugar,id_categoria) values(5,3); --Museos
+insert into categoria_lugar (id_lugar,id_categoria) values(8,4); --Teatros
+insert into categoria_lugar (id_lugar,id_categoria) values(10,4); --Teatros
+insert into categoria_lugar (id_lugar,id_categoria) values(11,4); --Teatros
+insert into categoria_lugar (id_lugar,id_categoria) values(7,5); --Centros comerciales
+insert into categoria_lugar (id_lugar,id_categoria) values(9,5); --Centros comerciales
 

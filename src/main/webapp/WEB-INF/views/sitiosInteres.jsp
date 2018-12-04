@@ -90,7 +90,7 @@
 		
 		<div class="row" id="div_categorias">
 		   	<c:forEach items="${categorias}" var="categoria">
-		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.html}')">${categoria.nombre}</button></div>
+		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.html}', '${categoria.id}')">${categoria.nombre}</button></div>
 			</c:forEach>	    		
 		</div>
 		<div class="row" id="div_volverCategorias" style="display:none">

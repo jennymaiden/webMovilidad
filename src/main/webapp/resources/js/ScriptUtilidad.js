@@ -4,7 +4,7 @@
 
 /**
  * Funcion para mostrar la lista de los lugares por categoria**/
-function mostrarCategoria(id){
+function mostrarCategoria(html, id){
 	$("#div_volverCategorias").css("display","block");
 	$("#div_categorias").css("display","none");
 	$("#div_vistaCategoria").css("display","block");
