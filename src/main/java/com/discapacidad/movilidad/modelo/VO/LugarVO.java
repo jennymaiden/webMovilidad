@@ -19,10 +19,10 @@ public class LugarVO {
 	public String nombre;
 	
 	@Column(name="longitud", nullable=false)
-	public Integer longitud;
+	public String longitud;
 	
 	@Column(name="latitud", nullable=false)
-	public Integer Latitud;
+	public String Latitud;
 	
 	@Column(name="mensaje", nullable=false)
 	public String mensaje;
@@ -35,7 +35,7 @@ public class LugarVO {
 		super();
 	}
 
-	public LugarVO(Integer id, String nombre, Integer longitud, Integer latitud, String mensaje, Integer contador) {
+	public LugarVO(Integer id, String nombre, String longitud, String latitud, String mensaje, Integer contador) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -61,19 +61,19 @@ public class LugarVO {
 		this.nombre = nombre;
 	}
 
-	public Integer getLongitud() {
+	public String getLongitud() {
 		return longitud;
 	}
 
-	public void setLongitud(Integer longitud) {
+	public void setLongitud(String longitud) {
 		this.longitud = longitud;
 	}
 
-	public Integer getLatitud() {
+	public String getLatitud() {
 		return Latitud;
 	}
 
-	public void setLatitud(Integer latitud) {
+	public void setLatitud(String latitud) {
 		Latitud = latitud;
 	}
 
@@ -91,6 +91,12 @@ public class LugarVO {
 
 	public void setContador(Integer contador) {
 		this.contador = contador;
+	}
+
+	@Override
+	public String toString() {
+		return "{'id'='" + id + "', 'nombre'='" + nombre + "', 'longitud'='" + longitud + "', 'Latitud'='" + Latitud
+				+ "', 'mensaje'='" + mensaje + "', 'contador'='" + contador + "'}";
 	}
 
 	

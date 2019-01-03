@@ -4,7 +4,7 @@
 
 /**
  * Funcion para mostrar la lista de los lugares por categoria**/
-function mostrarCategoria(html, id){
+function mostrarCategoria(cName, id){
 	$("#div_volverCategorias").css("display","block");
 	$("#div_categorias").css("display","none");
 	$("#div_vistaCategoria").css("display","block");
@@ -16,10 +16,18 @@ function mostrarCategoria(html, id){
         url: 'ajaxMovilidad',
         type: 'POST',
         data: 'funcion='+JSON.stringify(search),
+        dataType : 'json',
         async: false,
         success: function(result){
            console.log("Respuesta::....."+result);
-        	$("#lista_lugares").html(result);
+           console.log("Respuesta::....."+result.lugar);
+           var json = JSON.stringify(result.lugar);
+           console.log("Respuesta json::....."+json.nombre);
+           for(var x in result){
+        	   console.log(":::::::::"+x+"     :::::::::::::::::"+result[x]);
+           }
+           $("#nombre_categoria").html(cName);
+           $("#lista_lugares").html('<li><a href="#div_vistaCategoria" data-latitud="">nombre</a></li>');
         }
     });
 	

@@ -97,10 +97,10 @@ public class SesionServicioImpl implements SesionServicio{
 		HttpSession session = request.getSession();
 		String msg = "";
 		if(session.getAttribute("usr") != null && !session.getAttribute("usr").equals("")){
-			System.out.println("Se encuentra alo en la sesion");
+			//System.out.println("Se encuentra alo en la sesion");
 			msg="true";
 		}else{
-			System.out.println("No ahi nada!!!");
+			//System.out.println("No ahi nada!!!");
 		}
 		model.addAttribute("perfil",msg);
 		

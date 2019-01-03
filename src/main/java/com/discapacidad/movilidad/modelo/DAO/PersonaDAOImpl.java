@@ -54,9 +54,9 @@ public class PersonaDAOImpl implements PersonaDAO {
 		 {
 			Query query = mySessionFactory.getCurrentSession().createQuery("from PersonaVO where usuario=:pUsuario");
 			query.setParameter("pUsuario",usuario);
-			System.out.println("La respuesta es:..."+query.list());
+			//System.out.println("La respuesta es:..."+query.list());
 			
-			System.out.println("El tamaño de la lista es:......"+query.list().size());
+			//System.out.println("El tamaño de la lista es:......"+query.list().size());
 			if(query.list().size() > 1){
 				respuesta = true;
 			}

@@ -90,21 +90,28 @@
 		
 		<div class="row" id="div_categorias">
 		   	<c:forEach items="${categorias}" var="categoria">
-		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.html}', '${categoria.id}')">${categoria.nombre}</button></div>
+		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.nombre}', '${categoria.id}')">${categoria.nombre}</button></div>
 			</c:forEach>	    		
 		</div>
 		<div class="row" id="div_volverCategorias" style="display:none">
 			<div class="col-sm-8"></div>
-			<div class="col-sm-4" align="right"><button type="button" class="btn btn-info" onClick="volverCategorias()">Mostrar categorias</button></div>
+			<div class="col-sm-4" align="left"><button type="button" class="btn btn-sm btn-info" onClick="volverCategorias()">Volver categorias</button></div>
 		</div>
 		<div id="div_vistaCategoria" style="display:none">
+			<div class="row">
+				<h2 id="nombre_categoria"></h2>
+			</div>
 			<div class="row">
 				<div class="col-sm-4">
 					<ul id="lista_lugares">
 						
 					</ul>
 				</div>
-				<div class="col-sm-8"></div>
+				<div class="col-sm-8">
+					<h2>Mapa</h2>
+					<div id="lugar_mapa">
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="map"></div>
