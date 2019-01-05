@@ -93,3 +93,7 @@ insert into categoria_lugar (id_lugar,id_categoria) values(9,5); --Centros comer
 select a.* from lugar as a 
 inner join categoria_lugar as b on a.id = b.id_lugar 
 inner join categoria as c on b.id_categoria = c.id;
+
+select * from categoria_lugar;
+select * from categoria;
+select * from lugar;

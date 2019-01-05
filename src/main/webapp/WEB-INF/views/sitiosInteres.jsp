@@ -19,7 +19,7 @@
 <script src="webjars/jquery/3.0.0/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="resources/js/ScriptUtilidad.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk&callback=initialise"
     async defer></script>
 <style>
       /* Always set the map height explicitly to define the size of the div
@@ -37,19 +37,6 @@
         padding: 0;
       }
     </style>
-    <script>
-      var map;
-     
-      
-      function initMap() {
-    	 
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
-    
 
 <title>${title}</title>
 </head>
@@ -103,7 +90,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
-					<ul id="lista_lugares">
+					<ul id="lista_lugares" class="list-group list-group-flush">
 						
 					</ul>
 				</div>
@@ -114,7 +101,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="map"></div>
+		
 	</div>
 	<!-- Footer -->
 	<jsp:include page="templates/Footer.jsp" /> 

@@ -44,12 +44,9 @@ public class SpringController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String paginaInicio(Model model, HttpServletRequest request, HttpServletResponse response) {
 		
-		//logger.info("Returning hello view");
+		logger.info("Returning hello view");
         model.addAttribute("title", "Health Mov -Login");
         servicioSesion.validacionSesion(request, model);
-		/*ModelAndView model= new ModelAndView("index");
-		logger.info("Returning hello view");
-		model.addObject("title", "Health Mov");*/
 		
 		return "index";
 	}

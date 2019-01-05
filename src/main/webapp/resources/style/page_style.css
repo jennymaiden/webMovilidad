@@ -1109,3 +1109,14 @@ section
 {
 	color: #28262d;
 }
+
+/**Estilos de las listas */
+.list-group-item.active{
+	background-color: #6f42c1 !important;
+    border-color: #6f42c1 !important;
+}
+
+.list-group-item li:hover{
+	background-color: #d74bfa !important;
+}
+

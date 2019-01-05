@@ -77,6 +77,12 @@ public class CategoriaVO {
 	public void setHtml(String html) {
 		this.html = html;
 	}
+
+
+	@Override
+	public String toString() {
+		return "{\"id\":\"" + id + "\", \"nombre\":\"" + nombre + "\", \"habilitado\":\"" + habilitado + "\", \"html\":\"" + html + "\"}";
+	}
 	
 	
 

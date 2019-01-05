@@ -95,8 +95,8 @@ public class LugarVO {
 
 	@Override
 	public String toString() {
-		return "{'id'='" + id + "', 'nombre'='" + nombre + "', 'longitud'='" + longitud + "', 'Latitud'='" + Latitud
-				+ "', 'mensaje'='" + mensaje + "', 'contador'='" + contador + "'}";
+		return "{\"id\":\"" + id + "\", \"nombre\":\"" + nombre + "\", \"longitud\":\"" + longitud + "\", \"Latitud\":\"" + Latitud
+				+ "\", \"mensaje\":\"" + mensaje + "\", \"contador\":\"" + contador + "\"}";
 	}
 
 	
