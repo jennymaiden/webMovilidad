@@ -50,6 +50,7 @@
 			</div>
 		</div>
 		<div class="row">
+		
 		<div class="col-lg-2"></div>
 			<div class="col-lg-8">
 				<h2>Las barreras que siguen sufriendo las personas con discapacidad</h2>

@@ -19,6 +19,7 @@
 				</c:if>
 				<c:if test="${perfil =='true'}">
 					<li><a href="sitiosInteres">Sitios Interes</a></li>
+					<li><a href="administrarSitios">Administracion de sitios</a></li>
 					<li><a href="#" id="perfilUsuario" data-toggle="modal" data-target="#myModal">Bienvenido <strong>${usr.nombre}</strong></a></li>
 				</c:if>
 			</ul>

@@ -39,7 +39,7 @@
 	
 	</div>
 	<!-- Contenido -->
-	<div class="container">
+	<div class="container" style="margin-bottom: 30px">
 		<div class="row">
 			<div class="col text-center">
 				<div class="section_title">
@@ -70,10 +70,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<p>Es interactiva, cualquier usuario registrado de forma gratuita puede dar de alta un establecimiento o ingresar uno nuevo en 
-				cualquier parte de la ciudad e Bogotá. Además, puede comentar y valorar esa accesibilidad.
-				<br>Ya que no es igual la accesibilidad de una persona joven en silla de ruedas que una persona mayor en silla de reudas electrica,
-				paraesto las personas tendran la opcion de opinar sobre sus necesidades y lo mas importante dar un rainting de los mejores lugares
-				para que asi ayudar a los otros usuarios a conocer estos lugares.</p>
+				cualquier parte de la ciudad e Bogotá. Además, puede  valorar esa accesibilidad.
+				<br>Ya que no es igual la accesibilidad de una persona joven en silla de ruedas que una persona mayor en silla de reudas electrica</p>
 			</div>
 		</div>
 	</div>

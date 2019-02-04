@@ -18,15 +18,18 @@
 <!--  Eventos  jQuery -->
 <script src="webjars/jquery/3.0.0/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.35&key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk&callback=loadMap" ></script> 
+<!-- <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk"></script> --> 
+<!-- <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk'></script> -->
+
 <script src="resources/js/ScriptUtilidad.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdD2rLSbypejspt-U9Q6LF_WhE4xgOQXk&callback=initialise"
-    async defer></script>
 <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 300px;
-        width: 300px;
+      #lugar_mapa {
+        height: 400px;
+        width: 100%; 
+        border: 1px solid;
         
         
       }
@@ -37,6 +40,7 @@
         padding: 0;
       }
     </style>
+ 
 
 <title>${title}</title>
 </head>
@@ -63,7 +67,7 @@
 
 	</div> 
 	<!-- Contenido -->
-	<div class="container">
+	<div class="container" style="margin-bottom: 30px">
 	<br>
 		<div class="row">
 				<div class="col text-center">
@@ -74,33 +78,79 @@
 					</div>
 				</div>
 		</div>
-		
-		<div class="row" id="div_categorias">
-		   	<c:forEach items="${categorias}" var="categoria">
-		   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.nombre}', '${categoria.id}')">${categoria.nombre}</button></div>
-			</c:forEach>	    		
+		<div style="height: 500px" id="div_categorias">
+			<div class="row"  >
+			   	<c:forEach items="${categorias}" var="categoria">
+			   		<div class="col-sm-4" align="center"><button type="button" class="btn btn-warning" onClick="mostrarCategoria('${categoria.nombre}', '${categoria.id}')">${categoria.nombre}</button></div>
+				</c:forEach>	    		
+			</div>
 		</div>
+		
 		<div class="row" id="div_volverCategorias" style="display:none">
 			<div class="col-sm-8"></div>
 			<div class="col-sm-4" align="left"><button type="button" class="btn btn-sm btn-info" onClick="volverCategorias()">Volver categorias</button></div>
 		</div>
 		<div id="div_vistaCategoria" style="display:none">
 			<div class="row">
-				<h2 id="nombre_categoria"></h2>
-			</div>
+				<div class="col-sm-12" align="center"><h2 id="nombre_categoria"></h2></div>
+				
+			</div><hr>
 			<div class="row">
 				<div class="col-sm-4">
-					<ul id="lista_lugares" class="list-group list-group-flush">
-						
-					</ul>
+					<ul id="lista_lugares" class="list-group list-group-flush"></ul>
 				</div>
 				<div class="col-sm-8">
-					<h2>Mapa</h2>
-					<div id="lugar_mapa">
+					<div class="row" >
+						<div class="col-sm-10"align="center"><h3 id="descripcion_lugar"></h3></div>
+						<div class="col-sm-2"><button class="btn btn-succes" onClick="contarMegusta(this)" data-lugar="0"  data-megusta="0" id="btnContador"><span id="sp_contado">(0)</span> Me gusta</button></div>
+						
 					</div>
+					<div class="row" style="margin-top: 20px">
+						<div class="col-sm-12" id="lugar_mapa"></div>
+					</div>
+					<div class="row">
+						<h3>Imagenes del lugar</h3>
+					</div>
+					<div class="row">
+					<div class="col-lg-12">
+						<div id="demo" class="carousel slide" data-ride="carousel">
+
+						  <!-- Indicators -->
+						  <ul class="carousel-indicators">
+						    <li data-target="#demo" data-slide-to="0" class="active"></li>
+						    <li data-target="#demo" data-slide-to="1"></li>
+						    <li data-target="#demo" data-slide-to="2"></li>
+						  </ul>
+			  
+						  <!-- The slideshow -->
+						  <div class="carousel-inner">
+						    <div class="carousel-item active">
+						       <img src="resources/imagenes/portada/ramplas.jpeg" alt="Las ramplas para los discapacitados" width="100%" height="400px">
+						    </div>
+						    <div class="carousel-item">
+						       <img src="resources/imagenes/portada/banios.jpg" alt="LOs baños para los discapacitados" width="100%" height="400px">
+						    </div>
+						    <div class="carousel-item">
+						      <img src="resources/imagenes/portada/aparcar-minusvalido.jpg" alt="parqueadero  para los discapacitados" width="100%" height="400px">
+						    </div>
+						  </div>
+			  
+						  <!-- Left and right controls -->
+						  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+						    <span class="carousel-control-prev-icon"></span>
+						  </a>
+						  <a class="carousel-control-next" href="#demo" data-slide="next">
+						    <span class="carousel-control-next-icon"></span>
+						  </a>
+			  
+						</div>
+					</div>
+				</div>
+					
 				</div>
 			</div>
 		</div>
+		
 		
 	</div>
 	<!-- Footer -->

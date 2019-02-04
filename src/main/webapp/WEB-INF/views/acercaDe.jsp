@@ -63,7 +63,7 @@
 		</div>
 	</div>
 	<div class="icon_boxes">
-		<div class="container">
+		<div class="container" style="margin-bottom: 30px">
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title">
@@ -79,9 +79,9 @@
 					  <li>Brindar una  plataforma dinámica en donde los mismos usuarios la puedan actualizar, agregando los lugares que cumplan las 
 						condiciones de movilidad para discapacitados así mismo como reportar sitios que se encuentran en condiciones no aptas y 
 						que se encuentren es esta plataforma.</li>
-					  <li>Junto con la  colaboración de una API de  google maps brindar la ruta  de llegada a dichos lugares.</li>
-					  <li>El sistema contará con estadísticas de los lugares más visitados y agradables para las personas, con el fin de 
-					  mantener actualizada la plataforma.</li>
+					  <li>Junto con la  colaboración de una API de  google maps brindar la ubicacion de dichos lugares.</li>
+					  <li>El sistema contará un boton de "megusta" que te indicara la cantidad de personas a las que les ha gustado este sitio
+					  y asi mismo tú podras dar click si te ha gustado el lugar</li>
 					</ol>
 				</div>
 				

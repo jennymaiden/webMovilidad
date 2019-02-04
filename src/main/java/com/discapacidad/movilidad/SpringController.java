@@ -13,16 +13,16 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.discapacidad.movilidad.modelo.VO.FormLugarVO;
+import com.discapacidad.movilidad.modelo.VO.ImagenLugarVO;
+import com.discapacidad.movilidad.modelo.VO.LugarVO;
 import com.discapacidad.movilidad.modelo.VO.PersonaVO;
 import com.discapacidad.movilidad.servicio.MovilidadServicio;
 import com.discapacidad.movilidad.servicio.SesionServicio;
@@ -51,16 +51,14 @@ public class SpringController {
 		return "index";
 	}
 	
-	
-	
-	
-	
+
 	@RequestMapping(value = "/acercaDeNosotros", method = RequestMethod.GET)
     public String asercaDe(Model model,HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 		
         model.addAttribute("title", "Health Mov -Acerca de nosotros");
         servicioSesion.validacionSesion(request, model);
+        
         return "acercaDe";
     }
 	
@@ -70,6 +68,7 @@ public class SpringController {
 			
         model.addAttribute("title", "Health Mov -Servicios");
         servicioSesion.validacionSesion(request, model);
+        
         return "Servicios";
     }
 	
@@ -90,6 +89,7 @@ public class SpringController {
         servicioSesion.validacionSesion(request, model);
         //Listar las categoias
         model.addAttribute("categorias", serviciomMovilidad.mostrarCategorias());
+        
         return "sitiosInteres";
     }
 	
@@ -202,5 +202,49 @@ public class SpringController {
         
         return "redirect:/unete?login="+msg;
     }
+	
+	/**
+	 * Metodo para la vista de la administracion de los sitios **/
+	@RequestMapping(value = "/administrarSitios", method = RequestMethod.GET)
+	public String viewAdminPlace(Model model, HttpServletRequest request, HttpServletResponse response) {
+		
+		//logger.info("Returning hello view");
+        model.addAttribute("title", "Health Mov - Administracion de lugaes");
+        //Consultar las categorias con sus lugares
+        //servicioSesion.validacionSesion(request, model);
+		if(request.getParameter("creacion")!= null && request.getParameter("creacion").equals("true") ){
+			model.addAttribute("creacion", "Se creo el lugar correctamente");
+		}
+		model.addAttribute("imagenLugarVO", new ImagenLugarVO());
+		model.addAttribute("categoriaLugar", serviciomMovilidad.listaCategoriaLugar());
+		model.addAttribute("formLugarVO", new FormLugarVO());
+		model.addAttribute("listCategoria", serviciomMovilidad.mostrarCategorias());
+		
+		return "admiSitios";
+	}
+	
+	
+	
+	/**
+	 * Funcion de la accion de submit del formulario de creacion de lugar**/
+	@RequestMapping(value = "/formCargarArchivo", method = RequestMethod.POST)
+	public String formCargarArchivo(@ModelAttribute("imagenLugarVO") ImagenLugarVO imagenLugarVO) {
+		
+		Boolean respuesta = false;
+		
+		System.out.println("El objeto que llega es::::::::::::::"+imagenLugarVO.getFichero());
+		respuesta = serviciomMovilidad.cargarArchivo(imagenLugarVO);
+		return "redirect:/administrarSitios?creacion="+respuesta;
+	}
+	
+	/**
+	 * Funcion de la accion de submit del formulario de creacion de lugar**/
+	@RequestMapping(value = "/formEditLugar", method = RequestMethod.POST)
+	public String formCrearLugar(@ModelAttribute("formLugarVO") FormLugarVO formLugaVO) {
+
+		serviciomMovilidad.saveUpdateLugar(formLugaVO);
+		
+		return "redirect:/administrarSitios?creacion=true";
+	}
 
 }
