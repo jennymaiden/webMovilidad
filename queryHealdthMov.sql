@@ -88,12 +88,27 @@ insert into categoria_lugar (id_lugar,id_categoria) values(11,4); --Teatros
 insert into categoria_lugar (id_lugar,id_categoria) values(7,5); --Centros comerciales
 insert into categoria_lugar (id_lugar,id_categoria) values(9,5); --Centros comerciales
 
-
+--Creacion de tabla de imagenes relacionadas con un lugar
+CREATE TABLE imagen_lugar(
+	id serial primary key,
+	id_lugar integer,
+	ruta varchar(200),
+	nombre varchar(200),
+	FOREIGN KEY (id_lugar) REFERENCES lugar(id)
+);
 --Query
-select a.* from lugar as a 
+select a.*, c.* from lugar as a 
 inner join categoria_lugar as b on a.id = b.id_lugar 
 inner join categoria as c on b.id_categoria = c.id;
 
 select * from categoria_lugar;
 select * from categoria;
 select * from lugar;
+
+select a.* from lugar as a 
+inner join categoria_lugar as b on a.id = b.id_lugar 
+inner join categoria as c on c.id=b.id_categoria where c.id=3;
+
+delete from lugar where id=16;
+
+select  * from imagen_lugar;

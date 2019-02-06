@@ -70,10 +70,10 @@ public class AjaxController {
 				 		
 				 		//System.out.println("prueba del caso 3::::::::::...."+objeto.toString());
 				 		LugarVO lugar = serviciomMovilidad.buscarLugar(objeto.getInt("idLugar"));
-				 		Image imagenInterna = new ImageIcon(
+				 		/*Image imagenInterna = new ImageIcon(
 				 			   getClass().getResource("/home/fernando/Documentos/Utilidades/movilidad/ImagenesLugares/ErrorHigueraEscalante.png")
 				 			).getImage();
-				 		model.addAttribute("imagen", imagenInterna);
+				 		model.addAttribute("imagen", imagenInterna);*/
 				 		respuesta.put("lugar", lugar.toString());
 				 		break;
 				 	case 4: //Contador de megusta
